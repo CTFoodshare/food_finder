@@ -1,0 +1,5 @@
+[
+  {"id":"demo-1","name":"Sample Hartford Food Pantry (DEMO)","type":"Food Pantry","address":"100 Main Street","town":"Hartford","zip":"06103","lat":41.7637,"lng":-72.6851,"days":["Monday","Wednesday"],"hours":"Example only — not verified","phone":""},
+  {"id":"demo-2","name":"Sample New Haven Mobile Distribution (DEMO)","type":"Mobile Pantry","address":"100 Church Street","town":"New Haven","zip":"06510","lat":41.3083,"lng":-72.9279,"days":["Tuesday"],"hours":"Example only — not verified","phone":""},
+  {"id":"demo-3","name":"Sample Bridgeport Meal Program (DEMO)","type":"Meal Program","address":"100 Main Street","town":"Bridgeport","zip":"06604","lat":41.1792,"lng":-73.1894,"days":["Friday","Saturday"],"hours":"Example only — not verified","phone":""}
+]
