@@ -1,20 +1,20 @@
-# Community Food Finder
+# Connecticut Food Finder — v2 pilot
 
-A static, GitHub Pages-ready food assistance locator using Leaflet and OpenStreetMap.
+Static GitHub Pages application with a small curated public-source dataset, Leaflet map, filters, links to source pages, and **local-only partner editing demonstration**.
 
 ## Deploy
-1. Create a public GitHub repository.
-2. Upload `index.html` and `locations.json` to its root.
-3. Open Settings > Pages > Build and deployment > Deploy from a branch.
-4. Select `main` and `/ (root)` and save.
-5. Open the published URL shown in GitHub Pages.
+Create a GitHub repository; upload `index.html` and `locations.json` to the root; enable Settings → Pages → Deploy from branch → main / root. GitHub Pages serves both files. No build step required.
 
-## Data
-Replace all demo records in `locations.json` with verified programs before public launch. Each record requires a unique `id`, numeric `lat` and `lng`, and should include `name`, `type`, `address`, `town`, `zip`, `days` (array), `hours`, and `phone`.
+## Important limitations
+- Six initial public-source records only. This is **not** a complete or authoritative Connecticut Foodshare partner directory.
+- Mobile dates are **selected explicitly published 2026 dates**, not a complete synchronized schedule. Confirm all schedules before traveling. No dates are extrapolated from recurrence patterns.
+- Coordinates are approximate for map display; Directions searches use the published address.
+- Partner portal is a **localStorage-only demo**; anyone can edit their own browser copy, but no shared database, secure accounts, approvals, or cross-device persistence exist.
+- Do not represent public third-party listings as confirmed Connecticut Foodshare partner agencies without verification.
+- Public data licensing and redistribution rights must be reviewed before importing a full directory from 211 or other third-party services.
 
-## Notes
-- The geocoder uses the public OpenStreetMap Nominatim endpoint, subject to its usage policy. For production traffic use an appropriate hosted geocoding service and follow its terms.
-- OpenStreetMap tile servers have usage limits; for a high-traffic site use a hosted tile provider.
-- Distance is straight-line, not driving distance.
-- GitHub Pages is static: accounts, partner self-service editing, SMS alerts, and secure administration require external backend services.
-- The demo data is fictional and not suitable for directing people to food assistance.
+## Suggested production backend
+Supabase Auth + PostgreSQL with agency, program, location, service schedule, event, user_membership, and audit log tables. Enforce Row Level Security based on agency membership; do not put service-role keys in GitHub Pages. All changes should be reviewed or tracked with an audit trail. Schedule ingestion should run server-side with source provenance and cancellation support.
+
+## Public source URLs
+See `source` per record in `locations.json`. Published 2026 schedules are subject to change.
